@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://bselectricfl.com/sitemap.xml

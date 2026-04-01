@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 216 39% 7%;
+    --foreground: 0 0% 100%;
+
+    --card: 216 39% 10%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 216 39% 10%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 47 100% 50%;
+    --primary-foreground: 216 39% 7%;
+
+    --secondary: 216 30% 15%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 216 25% 18%;
+    --muted-foreground: 214 20% 69%;
+
+    --accent: 47 100% 50%;
+    --accent-foreground: 216 39% 7%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 216 25% 20%;
+    --input: 216 25% 20%;
+    --ring: 47 100% 50%;
+
+    --radius: 0.5rem;
+
+    --navy: 216 39% 7%;
+    --navy-light: 216 30% 15%;
+    --electric: 47 100% 50%;
+    --electric-glow: 47 100% 60%;
+
+    --font-heading: 'Montserrat', sans-serif;
+    --font-body: 'Inter', sans-serif;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(var(--electric)) 0%, hsl(var(--electric-glow)) 100%);
+  }
+
+  .glow-border {
+    box-shadow: 0 0 20px hsl(var(--electric) / 0.15), 0 0 40px hsl(var(--electric) / 0.05);
+  }
+
+  .section-padding {
+    @apply py-16 md:py-24 px-4;
+  }
+
+  .section-bg-dark {
+    background-color: hsl(var(--background) / 0.84);
+  }
+
+  .section-bg-alt {
+    background-color: hsl(var(--secondary) / 0.84);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
