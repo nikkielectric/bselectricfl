@@ -71,8 +71,8 @@ const Header = () => {
               <div className="absolute left-0 top-full pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-150 z-50">
                 <div className="w-56 rounded-md border border-border bg-popover text-popover-foreground shadow-md p-1">
                   {services.map((s) => (
-                    <a key={s} href="#" className="block px-3 py-2 text-sm rounded-sm hover:bg-accent hover:text-accent-foreground transition-colors">
-                      {s}
+                    <a key={s.name} href={s.href ?? "#"} className="block px-3 py-2 text-sm rounded-sm hover:bg-accent hover:text-accent-foreground transition-colors">
+                      {s.name}
                     </a>
                   ))}
                 </div>
