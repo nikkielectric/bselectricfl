@@ -89,7 +89,7 @@ const ElectricalPanels = () => (
       </section>
 
       {/* Services */}
-      <section className="section-padding">
+      <section className="section-padding section-bg-alt">
         <div className="container mx-auto px-4">
           <div className="text-center mb-14 max-w-2xl mx-auto">
             <p className="text-primary font-semibold text-sm uppercase tracking-widest mb-3">
@@ -160,7 +160,7 @@ const ElectricalPanels = () => (
       </section>
 
       {/* Process */}
-      <section className="section-padding">
+      <section className="section-padding section-bg-alt">
         <div className="container mx-auto px-4">
           <div className="text-center mb-14 max-w-2xl mx-auto">
             <p className="text-primary font-semibold text-sm uppercase tracking-widest mb-3">
