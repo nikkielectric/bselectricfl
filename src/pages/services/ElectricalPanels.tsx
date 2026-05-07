@@ -4,6 +4,10 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CircuitBackground from "@/components/CircuitBackground";
 import { Button } from "@/components/ui/button";
+import panelUpgradesImg from "@/assets/services/panel-upgrades.jpg";
+import panelReplacementsImg from "@/assets/services/panel-replacements.jpg";
+import panelRepairsImg from "@/assets/services/panel-repairs.jpg";
+import subPanelImg from "@/assets/services/sub-panel.jpg";
 
 const warningSigns = [
   "Frequently tripping breakers",
@@ -17,21 +21,25 @@ const warningSigns = [
 const services = [
   {
     icon: Zap,
+    image: panelUpgradesImg,
     title: "Panel Upgrades",
     desc: "Upgrade from 100A to 200A or 400A service to power modern appliances, EV chargers, and HVAC systems safely.",
   },
   {
     icon: ShieldCheck,
+    image: panelReplacementsImg,
     title: "Panel Replacements",
     desc: "Full code-compliant replacement of outdated, recalled, or unsafe panels with modern brands like Square D, Eaton, and Siemens.",
   },
   {
     icon: AlertTriangle,
+    image: panelRepairsImg,
     title: "Panel Repairs",
     desc: "Diagnose and repair faulty breakers, loose connections, burnt bus bars, and other panel issues — fast.",
   },
   {
     icon: CheckCircle2,
+    image: subPanelImg,
     title: "Sub-Panel Installation",
     desc: "Add capacity for additions, garages, workshops, ADUs, or pool equipment with properly sized sub-panels.",
   },
@@ -100,7 +108,7 @@ const ElectricalPanels = () => (
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {services.map((s, i) => (
               <motion.div
                 key={s.title}
@@ -108,13 +116,26 @@ const ElectricalPanels = () => (
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.5, delay: i * 0.08 }}
-                className="group bg-secondary rounded-xl border border-border p-6 hover:border-primary/40 transition-all duration-300"
+                className="group bg-card rounded-xl border border-border overflow-hidden hover:border-primary/40 transition-all duration-300 flex flex-col"
               >
-                <div className="h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
-                  <s.icon className="h-6 w-6 text-primary" />
+                <div className="relative aspect-[4/3] overflow-hidden">
+                  <img
+                    src={s.image}
+                    alt={s.title}
+                    width={1024}
+                    height={768}
+                    loading="lazy"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-card via-card/30 to-transparent" />
+                  <div className="absolute top-4 left-4 h-12 w-12 rounded-lg bg-primary flex items-center justify-center shadow-lg">
+                    <s.icon className="h-6 w-6 text-primary-foreground" />
+                  </div>
                 </div>
-                <h3 className="font-heading font-bold text-xl text-foreground mb-2">{s.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
+                <div className="p-6 flex-1">
+                  <h3 className="font-heading font-bold text-xl text-foreground mb-2">{s.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
+                </div>
               </motion.div>
             ))}
           </div>
