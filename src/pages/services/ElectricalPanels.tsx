@@ -108,7 +108,7 @@ const ElectricalPanels = () => (
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {services.map((s, i) => (
               <motion.div
                 key={s.title}
@@ -118,7 +118,7 @@ const ElectricalPanels = () => (
                 transition={{ duration: 0.5, delay: i * 0.08 }}
                 className="group bg-card rounded-xl border border-border overflow-hidden hover:border-primary/40 transition-all duration-300 flex flex-col"
               >
-                <div className="relative aspect-[4/3] overflow-hidden">
+                <div className="relative aspect-[16/10] overflow-hidden">
                   <img
                     src={s.image}
                     alt={s.title}
@@ -127,13 +127,13 @@ const ElectricalPanels = () => (
                     loading="lazy"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-card via-card/30 to-transparent" />
-                  <div className="absolute top-4 left-4 h-12 w-12 rounded-lg bg-primary flex items-center justify-center shadow-lg">
-                    <s.icon className="h-6 w-6 text-primary-foreground" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-card/80 via-card/20 to-transparent" />
+                  <div className="absolute top-3 left-3 h-10 w-10 rounded-lg bg-primary flex items-center justify-center shadow-lg">
+                    <s.icon className="h-5 w-5 text-primary-foreground" />
                   </div>
                 </div>
-                <div className="p-6 flex-1">
-                  <h3 className="font-heading font-bold text-xl text-foreground mb-2">{s.title}</h3>
+                <div className="p-5 flex-1">
+                  <h3 className="font-heading font-bold text-lg text-foreground mb-2">{s.title}</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
                 </div>
               </motion.div>
