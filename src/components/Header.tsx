@@ -88,7 +88,7 @@ const Header = () => {
                 Service Area <ChevronDown className="h-4 w-4 transition-transform group-hover:rotate-180" />
               </button>
               <div className="absolute left-0 top-full pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-150 z-50">
-                <div className="w-56 rounded-md border border-border bg-popover text-popover-foreground shadow-md p-1 max-h-96 overflow-y-auto">
+                <div className="w-[28rem] rounded-md border border-border bg-popover text-popover-foreground shadow-md p-1 grid grid-cols-2 gap-x-1">
                   {serviceAreas.map((c) => (
                     <a key={c} href="#" className="block px-3 py-2 text-sm rounded-sm hover:bg-accent hover:text-accent-foreground transition-colors">
                       {c}
