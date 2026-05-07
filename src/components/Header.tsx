@@ -134,8 +134,8 @@ const Header = () => {
               {mobileServicesOpen && (
                 <div className="pl-4 flex flex-col gap-2 pb-2">
                   {services.map((s) => (
-                    <a key={s} href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                      {s}
+                    <a key={s.name} href={s.href ?? "#"} onClick={() => setMobileOpen(false)} className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                      {s.name}
                     </a>
                   ))}
                 </div>
