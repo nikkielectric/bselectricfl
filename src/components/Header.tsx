@@ -81,7 +81,7 @@ const Header = () => {
 
             <a href="#" className={linkClass}>About Us</a>
 
-            <a href="#pricing" className={linkClass}>Pricing</a>
+            
 
             <div className="relative group">
               <button className={`${linkClass} flex items-center gap-1 outline-none py-2`}>
