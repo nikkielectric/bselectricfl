@@ -116,7 +116,7 @@ const ElectricalPanels = () => (
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.5, delay: i * 0.08 }}
-                className="group relative overflow-hidden rounded-xl border border-border p-6 min-h-[220px] hover:border-primary/40 transition-all duration-300"
+                className="group relative overflow-hidden rounded-xl border border-border p-0 min-h-[280px] hover:border-primary/40 transition-all duration-300"
               >
                 <img
                   src={s.image}
@@ -126,9 +126,8 @@ const ElectricalPanels = () => (
                   loading="lazy"
                   className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-background/70" />
-                <div className="absolute inset-0 bg-gradient-to-t from-secondary via-secondary/80 to-secondary/25" />
-                <div className="relative z-10 flex h-full flex-col justify-end">
+                <div className="absolute inset-0 bg-gradient-to-t from-secondary via-secondary/40 to-transparent" />
+                <div className="relative z-10 flex h-full flex-col justify-end p-6">
                   <h3 className="font-heading font-bold text-xl text-foreground mb-2">{s.title}</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
                 </div>
