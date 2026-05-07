@@ -81,7 +81,7 @@ const Header = () => {
 
             <a href="#" className={linkClass}>About Us</a>
 
-            <a href="#pricing" className={linkClass}>Pricing</a>
+            
 
             <div className="relative group">
               <button className={`${linkClass} flex items-center gap-1 outline-none py-2`}>
@@ -143,7 +143,7 @@ const Header = () => {
 
               <a href="#" onClick={() => setMobileOpen(false)} className={`${linkClass} py-2`}>About Us</a>
 
-              <a href="#pricing" onClick={() => setMobileOpen(false)} className={`${linkClass} py-2`}>Pricing</a>
+              
 
               <button
                 onClick={() => setMobileAreasOpen(!mobileAreasOpen)}
