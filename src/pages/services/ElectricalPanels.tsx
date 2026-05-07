@@ -108,7 +108,7 @@ const ElectricalPanels = () => (
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {services.map((s, i) => (
               <motion.div
                 key={s.title}
@@ -116,25 +116,27 @@ const ElectricalPanels = () => (
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.5, delay: i * 0.08 }}
-                className="group bg-card rounded-xl border border-border overflow-hidden hover:border-primary/40 transition-all duration-300 flex flex-col"
+                className="group bg-secondary rounded-xl border border-border p-6 hover:border-primary/40 transition-all duration-300"
               >
-                <div className="relative aspect-[16/10] overflow-hidden">
-                  <img
-                    src={s.image}
-                    alt={s.title}
-                    width={1024}
-                    height={768}
-                    loading="lazy"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-card/80 via-card/20 to-transparent" />
-                  <div className="absolute top-3 left-3 h-10 w-10 rounded-lg bg-primary flex items-center justify-center shadow-lg">
-                    <s.icon className="h-5 w-5 text-primary-foreground" />
+                <div className="flex items-start gap-4">
+                  <div className="relative h-20 w-20 flex-shrink-0 rounded-lg overflow-hidden">
+                    <img
+                      src={s.image}
+                      alt={s.title}
+                      width={1024}
+                      height={768}
+                      loading="lazy"
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-primary/20" />
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <s.icon className="h-7 w-7 text-primary drop-shadow-lg" />
+                    </div>
                   </div>
-                </div>
-                <div className="p-5 flex-1">
-                  <h3 className="font-heading font-bold text-lg text-foreground mb-2">{s.title}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
+                  <div className="flex-1">
+                    <h3 className="font-heading font-bold text-xl text-foreground mb-2">{s.title}</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
+                  </div>
                 </div>
               </motion.div>
             ))}
