@@ -129,9 +129,6 @@ const ElectricalPanels = () => (
                 <div className="absolute inset-0 bg-background/70" />
                 <div className="absolute inset-0 bg-gradient-to-t from-secondary via-secondary/80 to-secondary/25" />
                 <div className="relative z-10 flex h-full flex-col justify-end">
-                  <div className="w-12 h-12 bg-primary/15 rounded-lg flex items-center justify-center mb-5 border border-primary/25">
-                    <s.icon className="h-6 w-6 text-primary" />
-                  </div>
                   <h3 className="font-heading font-bold text-xl text-foreground mb-2">{s.title}</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
                 </div>
