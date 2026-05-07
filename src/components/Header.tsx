@@ -1,12 +1,6 @@
 import { useState } from "react";
 import { Phone, Menu, X, Zap, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
 
 const services = [
   "Electrical Panels",
