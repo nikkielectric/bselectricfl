@@ -1,12 +1,6 @@
 import { useState } from "react";
 import { Phone, Menu, X, Zap, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
 
 const services = [
   "Electrical Panels",
@@ -70,35 +64,39 @@ const Header = () => {
           <nav className="hidden lg:flex items-center gap-8">
             <a href="/" className={linkClass}>Home</a>
 
-            <DropdownMenu>
-              <DropdownMenuTrigger className={`${linkClass} flex items-center gap-1 outline-none`}>
-                Services <ChevronDown className="h-4 w-4" />
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align="start" className="w-56">
-                {services.map((s) => (
-                  <DropdownMenuItem key={s} className="cursor-pointer">
-                    {s}
-                  </DropdownMenuItem>
-                ))}
-              </DropdownMenuContent>
-            </DropdownMenu>
+            <div className="relative group">
+              <button className={`${linkClass} flex items-center gap-1 outline-none py-2`}>
+                Services <ChevronDown className="h-4 w-4 transition-transform group-hover:rotate-180" />
+              </button>
+              <div className="absolute left-0 top-full pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-150 z-50">
+                <div className="w-56 rounded-md border border-border bg-popover text-popover-foreground shadow-md p-1">
+                  {services.map((s) => (
+                    <a key={s} href="#" className="block px-3 py-2 text-sm rounded-sm hover:bg-accent hover:text-accent-foreground transition-colors">
+                      {s}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </div>
 
             <a href="#" className={linkClass}>About Us</a>
 
             <a href="#pricing" className={linkClass}>Pricing</a>
 
-            <DropdownMenu>
-              <DropdownMenuTrigger className={`${linkClass} flex items-center gap-1 outline-none`}>
-                Service Area <ChevronDown className="h-4 w-4" />
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align="start" className="w-56">
-                {serviceAreas.map((c) => (
-                  <DropdownMenuItem key={c} className="cursor-pointer">
-                    {c}
-                  </DropdownMenuItem>
-                ))}
-              </DropdownMenuContent>
-            </DropdownMenu>
+            <div className="relative group">
+              <button className={`${linkClass} flex items-center gap-1 outline-none py-2`}>
+                Service Area <ChevronDown className="h-4 w-4 transition-transform group-hover:rotate-180" />
+              </button>
+              <div className="absolute left-0 top-full pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-150 z-50">
+                <div className="w-56 rounded-md border border-border bg-popover text-popover-foreground shadow-md p-1 max-h-96 overflow-y-auto">
+                  {serviceAreas.map((c) => (
+                    <a key={c} href="#" className="block px-3 py-2 text-sm rounded-sm hover:bg-accent hover:text-accent-foreground transition-colors">
+                      {c}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </div>
 
             <a href="#" className={linkClass}>Contact</a>
           </nav>
