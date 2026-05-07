@@ -2,15 +2,15 @@ import { useState } from "react";
 import { Phone, Menu, X, Zap, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const services = [
-  "Electrical Panels",
-  "Electrical Repairs",
-  "Emergency Service",
-  "Circuit Breakers",
-  "Lighting & Wiring",
-  "Smoke & CO Detectors",
-  "EV Charger Installation",
-  "Smart Home Electrical",
+const services: { name: string; href?: string }[] = [
+  { name: "Electrical Panels", href: "/services/electrical-panels" },
+  { name: "Electrical Repairs" },
+  { name: "Emergency Service" },
+  { name: "Circuit Breakers" },
+  { name: "Lighting & Wiring" },
+  { name: "Smoke & CO Detectors" },
+  { name: "EV Charger Installation" },
+  { name: "Smart Home Electrical" },
 ];
 
 const serviceAreas = [
