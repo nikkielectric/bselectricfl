@@ -116,27 +116,24 @@ const ElectricalPanels = () => (
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.5, delay: i * 0.08 }}
-                className="group bg-secondary rounded-xl border border-border p-6 hover:border-primary/40 transition-all duration-300"
+                className="group relative overflow-hidden rounded-xl border border-border p-6 min-h-[220px] hover:border-primary/40 transition-all duration-300"
               >
-                <div className="flex items-start gap-4">
-                  <div className="relative h-20 w-20 flex-shrink-0 rounded-lg overflow-hidden">
-                    <img
-                      src={s.image}
-                      alt={s.title}
-                      width={1024}
-                      height={768}
-                      loading="lazy"
-                      className="w-full h-full object-cover"
-                    />
-                    <div className="absolute inset-0 bg-primary/20" />
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <s.icon className="h-7 w-7 text-primary drop-shadow-lg" />
-                    </div>
+                <img
+                  src={s.image}
+                  alt={s.title}
+                  width={1024}
+                  height={768}
+                  loading="lazy"
+                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-background/70" />
+                <div className="absolute inset-0 bg-gradient-to-t from-secondary via-secondary/80 to-secondary/25" />
+                <div className="relative z-10 flex h-full flex-col justify-end">
+                  <div className="w-12 h-12 bg-primary/15 rounded-lg flex items-center justify-center mb-5 border border-primary/25">
+                    <s.icon className="h-6 w-6 text-primary" />
                   </div>
-                  <div className="flex-1">
-                    <h3 className="font-heading font-bold text-xl text-foreground mb-2">{s.title}</h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
-                  </div>
+                  <h3 className="font-heading font-bold text-xl text-foreground mb-2">{s.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
                 </div>
               </motion.div>
             ))}
