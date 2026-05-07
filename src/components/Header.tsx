@@ -2,15 +2,15 @@ import { useState } from "react";
 import { Phone, Menu, X, Zap, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const services = [
-  "Electrical Panels",
-  "Electrical Repairs",
-  "Emergency Service",
-  "Circuit Breakers",
-  "Lighting & Wiring",
-  "Smoke & CO Detectors",
-  "EV Charger Installation",
-  "Smart Home Electrical",
+const services: { name: string; href?: string }[] = [
+  { name: "Electrical Panels", href: "/services/electrical-panels" },
+  { name: "Electrical Repairs" },
+  { name: "Emergency Service" },
+  { name: "Circuit Breakers" },
+  { name: "Lighting & Wiring" },
+  { name: "Smoke & CO Detectors" },
+  { name: "EV Charger Installation" },
+  { name: "Smart Home Electrical" },
 ];
 
 const serviceAreas = [
@@ -71,8 +71,8 @@ const Header = () => {
               <div className="absolute left-0 top-full pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-150 z-50">
                 <div className="w-56 rounded-md border border-border bg-popover text-popover-foreground shadow-md p-1">
                   {services.map((s) => (
-                    <a key={s} href="#" className="block px-3 py-2 text-sm rounded-sm hover:bg-accent hover:text-accent-foreground transition-colors">
-                      {s}
+                    <a key={s.name} href={s.href ?? "#"} className="block px-3 py-2 text-sm rounded-sm hover:bg-accent hover:text-accent-foreground transition-colors">
+                      {s.name}
                     </a>
                   ))}
                 </div>
@@ -134,8 +134,8 @@ const Header = () => {
               {mobileServicesOpen && (
                 <div className="pl-4 flex flex-col gap-2 pb-2">
                   {services.map((s) => (
-                    <a key={s} href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                      {s}
+                    <a key={s.name} href={s.href ?? "#"} onClick={() => setMobileOpen(false)} className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                      {s.name}
                     </a>
                   ))}
                 </div>
