@@ -143,7 +143,7 @@ const Header = () => {
 
               <a href="#" onClick={() => setMobileOpen(false)} className={`${linkClass} py-2`}>About Us</a>
 
-              <a href="#pricing" onClick={() => setMobileOpen(false)} className={`${linkClass} py-2`}>Pricing</a>
+              
 
               <button
                 onClick={() => setMobileAreasOpen(!mobileAreasOpen)}
