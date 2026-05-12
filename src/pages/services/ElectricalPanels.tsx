@@ -171,7 +171,7 @@ const ElectricalPanels = () => {
                   (954) 868-4111
                 </Button>
               </a>
-              <a href="#">
+              <a href="#quote">
                 <Button size="lg" variant="outline" className="border-primary/40 text-foreground hover:bg-primary/10 hover:text-foreground font-semibold gap-2">
                   Get a Free Quote <ArrowRight className="h-4 w-4" />
                 </Button>
