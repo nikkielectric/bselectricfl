@@ -1,17 +1,27 @@
 import { Zap, Phone, Mail, MapPin } from "lucide-react";
 
 const quickLinks = [
-  { label: "Services", href: "#services" },
   { label: "Pricing", href: "#pricing" },
   { label: "Why Us", href: "#why-us" },
   { label: "Service Area", href: "#service-area" },
   { label: "Contact", href: "#contact" },
 ];
 
+const serviceLinks = [
+  { label: "Electrical Panels", href: "/services/electrical-panels" },
+  { label: "Electrical Repairs", href: "/services/electrical-repairs" },
+  { label: "Emergency Service", href: "/services/emergency-service" },
+  { label: "Circuit Breakers", href: "/services/circuit-breakers" },
+  { label: "Lighting & Wiring", href: "/services/lighting-wiring" },
+  { label: "Smoke & CO Detectors", href: "/services/smoke-co-detectors" },
+  { label: "EV Charger Installation", href: "/services/ev-charger-installation" },
+  { label: "Smart Home Electrical", href: "/services/smart-home-electrical" },
+];
+
 const Footer = () => (
   <footer className="bg-secondary border-t border-border">
     <div className="container mx-auto px-4 py-12 md:py-16">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
         <div>
           <div className="flex items-center gap-2 mb-4">
             <Zap className="h-6 w-6 text-primary" />
@@ -30,6 +40,19 @@ const Footer = () => (
           <h4 className="font-heading font-bold text-foreground mb-4">Quick Links</h4>
           <ul className="space-y-2">
             {quickLinks.map((link) => (
+              <li key={link.href}>
+                <a href={link.href} className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div>
+          <h4 className="font-heading font-bold text-foreground mb-4">Services</h4>
+          <ul className="space-y-2">
+            {serviceLinks.map((link) => (
               <li key={link.href}>
                 <a href={link.href} className="text-sm text-muted-foreground hover:text-primary transition-colors">
                   {link.label}
