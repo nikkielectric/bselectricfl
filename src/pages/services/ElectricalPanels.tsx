@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Zap, ShieldCheck, AlertTriangle, CheckCircle2, Phone, ArrowRight, ChevronDown } from "lucide-react";
 import Header from "@/components/Header";
