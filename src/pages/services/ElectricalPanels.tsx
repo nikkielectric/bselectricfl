@@ -265,6 +265,7 @@ const ElectricalPanels = () => {
 
       <Footer />
     </div>
+  </>
   );
 };
 
