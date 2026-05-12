@@ -79,7 +79,7 @@ const ElectricalPanels = () => (
               code-compliant panel upgrades, replacements, and repairs across Broward County —
               backed by a licensed master electrician and a workmanship warranty.
             </p>
-            <div className="flex flex-col sm:flex-row gap-3">
+            <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
               <a href="tel:9548684111">
                 <Button size="lg" className="bg-primary text-primary-foreground hover:bg-electric-glow font-semibold gap-2">
                   <Phone className="h-4 w-4" />
