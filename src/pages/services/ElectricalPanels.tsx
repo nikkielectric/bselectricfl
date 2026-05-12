@@ -60,13 +60,13 @@ const ElectricalPanels = () => (
       <Header />
 
       {/* Hero */}
-      <section className="relative pt-32 md:pt-40 pb-16 md:pb-24 section-bg-dark">
+      <section className="relative min-h-[60vh] flex items-center pt-32 md:pt-40 pb-16 md:pb-24 section-bg-dark">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="max-w-3xl"
+            className="max-w-3xl mx-auto text-center"
           >
             <p className="text-primary font-semibold text-sm uppercase tracking-widest mb-3">
               Electrical Services
