@@ -1,10 +1,16 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Zap, ShieldCheck, AlertTriangle, CheckCircle2, Phone, ArrowRight, ChevronDown } from "lucide-react";
+import { z } from "zod";
+import { Zap, ShieldCheck, AlertTriangle, CheckCircle2, Phone, ArrowRight, ChevronDown, Send } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CircuitBackground from "@/components/CircuitBackground";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { useToast } from "@/hooks/use-toast";
 import panelUpgradesImg from "@/assets/services/panel-upgrades.jpg";
 import panelReplacementsImg from "@/assets/services/panel-replacements.jpg";
 import panelRepairsImg from "@/assets/services/panel-repairs.jpg";
