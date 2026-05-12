@@ -118,7 +118,7 @@ const ServicePageLayout = ({ config }: { config: ServicePageConfig }) => {
         <Header />
 
         {/* Hero */}
-        <section className="relative min-h-[70vh] flex items-center pt-28 pb-16 md:pt-32 md:pb-24 section-bg-dark">
+        <section className="relative min-h-[70vh] flex items-center pt-40 pb-16 md:pt-48 md:pb-24 section-bg-dark">
           <div className="container mx-auto px-4">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
