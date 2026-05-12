@@ -236,6 +236,46 @@ const ElectricalPanels = () => {
         </div>
       </section>
 
+      {/* FAQ */}
+      <section className="section-padding section-bg-dark">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-14 max-w-2xl mx-auto">
+            <p className="text-primary font-semibold text-sm uppercase tracking-widest mb-3">
+              Frequently Asked Questions
+            </p>
+            <h2 className="font-heading font-extrabold text-3xl md:text-4xl text-foreground">
+              Electrical Panel FAQ — South Florida
+            </h2>
+          </div>
+
+          <div className="max-w-3xl mx-auto space-y-3">
+            {faqs.map((faq, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-30px" }}
+                transition={{ duration: 0.3, delay: i * 0.05 }}
+                className="bg-secondary border border-border rounded-xl overflow-hidden"
+              >
+                <button
+                  onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                  className="w-full flex items-center justify-between p-5 text-left"
+                >
+                  <span className="font-heading font-semibold text-foreground pr-4">{faq.q}</span>
+                  <ChevronDown className={`h-5 w-5 text-primary flex-shrink-0 transition-transform duration-200 ${openFaq === i ? "rotate-180" : ""}`} />
+                </button>
+                {openFaq === i && (
+                  <div className="px-5 pb-5 text-muted-foreground leading-relaxed">
+                    {faq.a}
+                  </div>
+                )}
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="section-padding section-bg-dark">
         <div className="container mx-auto px-4">
