@@ -18,18 +18,19 @@ const HeroSection = () => {
           <div>
             {/* Review rating badges */}
             <div className="flex flex-wrap items-center gap-4 mb-6">
-              <div
-                className="flex items-center gap-0 bg-card/90 backdrop-blur-sm rounded-full border border-border px-[16px] py-0"
-              >
-                <img src={googleLogo} alt="Google" className="h-16 w-16" />
-                <div className="flex flex-col items-center">
+              <div className="inline-flex items-center gap-3 bg-card/90 backdrop-blur-sm rounded-full border border-border pl-3 pr-5 py-2">
+                <img src={googleLogo} alt="Google" className="h-7 w-7" />
+                <span className="h-5 w-px bg-border" />
+                <div className="flex items-center gap-2">
                   <div className="flex items-center gap-0.5">
                     {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="h-3.5 w-3.5 fill-primary text-primary" />
+                      <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
                     ))}
                   </div>
-                  <span className="font-semibold text-primary text-base">5.0 Rating</span>
+                  <span className="font-bold text-foreground text-sm">5.0</span>
                 </div>
+                <span className="h-5 w-px bg-border" />
+                <span className="text-sm text-muted-foreground">5-Star Rated in Broward County</span>
               </div>
             </div>
 
