@@ -83,7 +83,8 @@ const faqs = [
 
 const ElectricalPanels = () => {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
-  <>
+  return (
+    <>
     <CircuitBackground />
     <div className="relative z-10">
       <Header />
