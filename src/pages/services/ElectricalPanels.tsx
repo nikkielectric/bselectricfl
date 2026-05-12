@@ -53,6 +53,33 @@ const process = [
   { step: "05", title: "Inspection & Cleanup", desc: "We handle the final inspection and leave your space spotless." },
 ];
 
+const faqs = [
+  {
+    q: "How much does an electrical panel upgrade cost in South Florida?",
+    a: "Most panel upgrades in Fort Lauderdale and Broward County range from $1,800 to $3,500 depending on amperage, brand, and whether trenching or meter relocation is needed. We provide free on-site quotes with upfront pricing.",
+  },
+  {
+    q: "Do I need a permit to replace my electrical panel in Florida?",
+    a: "Yes. Florida law and local municipalities in Broward County require permits for panel replacements and upgrades. B&S Electric pulls all necessary permits and coordinates inspections so you don't have to worry about compliance.",
+  },
+  {
+    q: "How long does a panel upgrade take?",
+    a: "Most residential panel upgrades are completed in a single day. We schedule the work around your availability, handle the FPL disconnect/reconnect, and pass final inspection before we leave.",
+  },
+  {
+    q: "Is my Federal Pacific or Zinsco panel dangerous?",
+    a: "Yes. Federal Pacific and Zinsco panels have known failure rates and are no longer manufactured. If your South Florida home still has one, we strongly recommend a free inspection and replacement for safety.",
+  },
+  {
+    q: "Can you install a sub-panel for my garage, pool, or ADU?",
+    a: "Absolutely. We size and install NEC-compliant sub-panels for workshops, pool equipment, detached garages, and ADUs throughout Fort Lauderdale, Hollywood, Pembroke Pines, and surrounding areas.",
+  },
+  {
+    q: "What size panel do I need for an EV charger?",
+    a: "A 200-amp service is typically recommended if you're adding a Level 2 EV charger. We calculate your total load demand and recommend the right upgrade for your home in South Florida.",
+  },
+];
+
 const ElectricalPanels = () => (
   <>
     <CircuitBackground />
