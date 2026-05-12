@@ -265,7 +265,7 @@ const ElectricalPanels = () => {
 
       <Footer />
     </div>
-  </>
+  );
 };
 
 export default ElectricalPanels;
