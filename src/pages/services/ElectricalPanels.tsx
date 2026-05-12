@@ -87,8 +87,40 @@ const faqs = [
   },
 ];
 
+const quoteSchema = z.object({
+  name: z.string().trim().min(1, "Name is required").max(100),
+  email: z.string().trim().email("Invalid email").max(255),
+  phone: z.string().trim().min(7, "Phone is required").max(20),
+  city: z.string().trim().min(1, "City is required").max(100),
+  serviceType: z.string().min(1, "Please select a service"),
+  message: z.string().trim().max(1000).optional(),
+});
+
 const ElectricalPanels = () => {
+  const { toast } = useToast();
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [form, setForm] = useState({ name: "", email: "", phone: "", city: "", serviceType: "", message: "" });
+  const [submitting, setSubmitting] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const result = quoteSchema.safeParse(form);
+    if (!result.success) {
+      toast({
+        title: "Please check the form",
+        description: result.error.issues[0]?.message ?? "Invalid input",
+        variant: "destructive",
+      });
+      return;
+    }
+    setSubmitting(true);
+    setTimeout(() => {
+      toast({ title: "Quote request sent!", description: "We'll be in touch within 1 business day." });
+      setForm({ name: "", email: "", phone: "", city: "", serviceType: "", message: "" });
+      setSubmitting(false);
+    }, 600);
+  };
+
   return (
     <>
     <CircuitBackground />
