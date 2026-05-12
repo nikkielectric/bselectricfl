@@ -67,16 +67,16 @@ const Footer = () => (
           <ul className="space-y-3">
             <li>
               <a href="tel:9548684111" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors">
-                <Phone className="h-4 w-4 text-primary" /> (954) 868-4111
+                <Phone className="h-5 w-5 text-primary" /> (954) 868-4111
               </a>
             </li>
             <li>
               <a href="mailto:Services@bselectricfl.com" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors">
-                <Mail className="h-4 w-4 text-primary" /> Services@bselectricfl.com
+                <Mail className="h-5 w-5 text-primary" /> Services@bselectricfl.com
               </a>
             </li>
             <li className="flex items-start gap-2 text-sm text-muted-foreground">
-              <MapPin className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+              <MapPin className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
               <span>15800 Pines Blvd Suite 3120, Hollywood, FL 33027</span>
             </li>
           </ul>
