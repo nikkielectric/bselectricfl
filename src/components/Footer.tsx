@@ -98,11 +98,10 @@ const Footer = () => (
         </div>
       </div>
 
-      <div className="border-t border-primary-foreground/20 mt-10 pt-6 flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 text-center">
+      <div className="border-t border-primary-foreground/20 mt-10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-2 text-center sm:text-left">
         <p className="text-xs text-primary-foreground/60">
           © 2026 B&S Electric LLC. All rights reserved. Licensed Electrical Contractor — EC13015340
         </p>
-        <span className="hidden sm:inline text-primary-foreground/40">|</span>
         <p className="text-xs text-primary-foreground/60">
           Website Built By{" "}
           <a href="https://www.wisdomstudios.co" target="_blank" rel="noopener noreferrer" className="underline hover:text-primary-foreground transition-colors">
