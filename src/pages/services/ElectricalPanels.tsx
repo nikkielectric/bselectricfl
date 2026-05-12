@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Zap, ShieldCheck, AlertTriangle, CheckCircle2, Phone, ArrowRight } from "lucide-react";
+import { Zap, ShieldCheck, AlertTriangle, CheckCircle2, Phone, ArrowRight, ChevronDown } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CircuitBackground from "@/components/CircuitBackground";
