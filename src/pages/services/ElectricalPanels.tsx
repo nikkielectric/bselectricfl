@@ -81,7 +81,8 @@ const faqs = [
   },
 ];
 
-const ElectricalPanels = () => (
+const ElectricalPanels = () => {
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
   <>
     <CircuitBackground />
     <div className="relative z-10">
