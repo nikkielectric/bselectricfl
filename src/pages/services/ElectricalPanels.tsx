@@ -1,10 +1,16 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Zap, ShieldCheck, AlertTriangle, CheckCircle2, Phone, ArrowRight, ChevronDown } from "lucide-react";
+import { z } from "zod";
+import { Zap, ShieldCheck, AlertTriangle, CheckCircle2, Phone, ArrowRight, ChevronDown, Send } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CircuitBackground from "@/components/CircuitBackground";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { useToast } from "@/hooks/use-toast";
 import panelUpgradesImg from "@/assets/services/panel-upgrades.jpg";
 import panelReplacementsImg from "@/assets/services/panel-replacements.jpg";
 import panelRepairsImg from "@/assets/services/panel-repairs.jpg";
@@ -81,8 +87,40 @@ const faqs = [
   },
 ];
 
+const quoteSchema = z.object({
+  name: z.string().trim().min(1, "Name is required").max(100),
+  email: z.string().trim().email("Invalid email").max(255),
+  phone: z.string().trim().min(7, "Phone is required").max(20),
+  city: z.string().trim().min(1, "City is required").max(100),
+  serviceType: z.string().min(1, "Please select a service"),
+  message: z.string().trim().max(1000).optional(),
+});
+
 const ElectricalPanels = () => {
+  const { toast } = useToast();
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [form, setForm] = useState({ name: "", email: "", phone: "", city: "", serviceType: "", message: "" });
+  const [submitting, setSubmitting] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const result = quoteSchema.safeParse(form);
+    if (!result.success) {
+      toast({
+        title: "Please check the form",
+        description: result.error.issues[0]?.message ?? "Invalid input",
+        variant: "destructive",
+      });
+      return;
+    }
+    setSubmitting(true);
+    setTimeout(() => {
+      toast({ title: "Quote request sent!", description: "We'll be in touch within 1 business day." });
+      setForm({ name: "", email: "", phone: "", city: "", serviceType: "", message: "" });
+      setSubmitting(false);
+    }, 600);
+  };
+
   return (
     <>
     <CircuitBackground />
@@ -133,7 +171,7 @@ const ElectricalPanels = () => {
                   (954) 868-4111
                 </Button>
               </a>
-              <a href="#">
+              <a href="#quote">
                 <Button size="lg" variant="outline" className="border-primary/40 text-foreground hover:bg-primary/10 hover:text-foreground font-semibold gap-2">
                   Get a Free Quote <ArrowRight className="h-4 w-4" />
                 </Button>
@@ -293,29 +331,123 @@ const ElectricalPanels = () => {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="section-padding section-bg-dark">
+      {/* CTA / Quote Form */}
+      <section id="quote" className="section-padding section-bg-alt border-t border-border">
         <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center bg-secondary border border-primary/30 rounded-2xl p-10 md:p-14">
-            <h2 className="font-heading font-extrabold text-3xl md:text-4xl text-foreground mb-4">
-              Ready to Upgrade Your Panel?
-            </h2>
-            <p className="text-muted-foreground mb-8 text-lg">
-              Get a free, no-obligation quote from a licensed Florida electrical contractor today.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <a href="tel:9548684111">
+          <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+            <div>
+              <p className="text-primary font-semibold text-sm uppercase tracking-widest mb-3">
+                Get a Free Quote
+              </p>
+              <h2 className="font-heading font-extrabold text-3xl md:text-4xl text-foreground mb-4">
+                Ready to Upgrade Your Panel?
+              </h2>
+              <p className="text-muted-foreground mb-6 text-lg leading-relaxed">
+                Tell us about your project and a licensed Broward County electrician will reach out within
+                one business day with upfront pricing — no obligation.
+              </p>
+              <a href="tel:9548684111" className="inline-block">
                 <Button size="lg" className="bg-primary text-primary-foreground hover:bg-electric-glow font-semibold gap-2">
                   <Phone className="h-4 w-4" />
-                  (954) 868-4111
-                </Button>
-              </a>
-              <a href="#">
-                <Button size="lg" variant="outline" className="border-primary/40 text-foreground hover:bg-primary/10 font-semibold">
-                  Request a Free Quote
+                  Or Call (954) 868-4111
                 </Button>
               </a>
             </div>
+
+            <form
+              onSubmit={handleSubmit}
+              className="bg-secondary border border-primary/30 rounded-2xl p-6 md:p-8 space-y-4"
+            >
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="space-y-2">
+                  <Label htmlFor="name">Name</Label>
+                  <Input
+                    id="name"
+                    value={form.name}
+                    onChange={(e) => setForm({ ...form, name: e.target.value })}
+                    maxLength={100}
+                    required
+                  />
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="phone">Phone</Label>
+                  <Input
+                    id="phone"
+                    type="tel"
+                    value={form.phone}
+                    onChange={(e) => setForm({ ...form, phone: e.target.value })}
+                    maxLength={20}
+                    required
+                  />
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="space-y-2">
+                  <Label htmlFor="email">Email</Label>
+                  <Input
+                    id="email"
+                    type="email"
+                    value={form.email}
+                    onChange={(e) => setForm({ ...form, email: e.target.value })}
+                    maxLength={255}
+                    required
+                  />
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="city">City</Label>
+                  <Input
+                    id="city"
+                    value={form.city}
+                    onChange={(e) => setForm({ ...form, city: e.target.value })}
+                    placeholder="Fort Lauderdale"
+                    maxLength={100}
+                    required
+                  />
+                </div>
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="serviceType">Service Needed</Label>
+                <Select
+                  value={form.serviceType}
+                  onValueChange={(v) => setForm({ ...form, serviceType: v })}
+                >
+                  <SelectTrigger id="serviceType">
+                    <SelectValue placeholder="Select a service" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="panel-upgrade">Panel Upgrade</SelectItem>
+                    <SelectItem value="panel-replacement">Panel Replacement</SelectItem>
+                    <SelectItem value="panel-repair">Panel Repair</SelectItem>
+                    <SelectItem value="sub-panel">Sub-Panel Installation</SelectItem>
+                    <SelectItem value="inspection">Free Inspection</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="message">Project Details (optional)</Label>
+                <Textarea
+                  id="message"
+                  rows={4}
+                  value={form.message}
+                  onChange={(e) => setForm({ ...form, message: e.target.value })}
+                  maxLength={1000}
+                  placeholder="Tell us about your panel, age, amperage, or what you've noticed..."
+                />
+              </div>
+
+              <Button
+                type="submit"
+                size="lg"
+                disabled={submitting}
+                className="w-full bg-primary text-primary-foreground hover:bg-electric-glow font-semibold gap-2"
+              >
+                <Send className="h-4 w-4" />
+                {submitting ? "Sending..." : "Request My Free Quote"}
+              </Button>
+            </form>
           </div>
         </div>
       </section>
