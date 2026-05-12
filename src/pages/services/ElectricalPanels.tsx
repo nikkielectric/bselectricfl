@@ -1,5 +1,6 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { Zap, ShieldCheck, AlertTriangle, CheckCircle2, Phone, ArrowRight } from "lucide-react";
+import { Zap, ShieldCheck, AlertTriangle, CheckCircle2, Phone, ArrowRight, ChevronDown } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CircuitBackground from "@/components/CircuitBackground";
@@ -53,8 +54,37 @@ const process = [
   { step: "05", title: "Inspection & Cleanup", desc: "We handle the final inspection and leave your space spotless." },
 ];
 
-const ElectricalPanels = () => (
-  <>
+const faqs = [
+  {
+    q: "How much does an electrical panel upgrade cost in South Florida?",
+    a: "Most panel upgrades in Fort Lauderdale and Broward County range from $1,800 to $3,500 depending on amperage, brand, and whether trenching or meter relocation is needed. We provide free on-site quotes with upfront pricing.",
+  },
+  {
+    q: "Do I need a permit to replace my electrical panel in Florida?",
+    a: "Yes. Florida law and local municipalities in Broward County require permits for panel replacements and upgrades. B&S Electric pulls all necessary permits and coordinates inspections so you don't have to worry about compliance.",
+  },
+  {
+    q: "How long does a panel upgrade take?",
+    a: "Most residential panel upgrades are completed in a single day. We schedule the work around your availability, handle the FPL disconnect/reconnect, and pass final inspection before we leave.",
+  },
+  {
+    q: "Is my Federal Pacific or Zinsco panel dangerous?",
+    a: "Yes. Federal Pacific and Zinsco panels have known failure rates and are no longer manufactured. If your South Florida home still has one, we strongly recommend a free inspection and replacement for safety.",
+  },
+  {
+    q: "Can you install a sub-panel for my garage, pool, or ADU?",
+    a: "Absolutely. We size and install NEC-compliant sub-panels for workshops, pool equipment, detached garages, and ADUs throughout Fort Lauderdale, Hollywood, Pembroke Pines, and surrounding areas.",
+  },
+  {
+    q: "What size panel do I need for an EV charger?",
+    a: "A 200-amp service is typically recommended if you're adding a Level 2 EV charger. We calculate your total load demand and recommend the right upgrade for your home in South Florida.",
+  },
+];
+
+const ElectricalPanels = () => {
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
+  return (
+    <>
     <CircuitBackground />
     <div className="relative z-10">
       <Header />
@@ -206,6 +236,46 @@ const ElectricalPanels = () => (
         </div>
       </section>
 
+      {/* FAQ */}
+      <section className="section-padding section-bg-dark">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-14 max-w-2xl mx-auto">
+            <p className="text-primary font-semibold text-sm uppercase tracking-widest mb-3">
+              Frequently Asked Questions
+            </p>
+            <h2 className="font-heading font-extrabold text-3xl md:text-4xl text-foreground">
+              Electrical Panel FAQ — South Florida
+            </h2>
+          </div>
+
+          <div className="max-w-3xl mx-auto space-y-3">
+            {faqs.map((faq, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-30px" }}
+                transition={{ duration: 0.3, delay: i * 0.05 }}
+                className="bg-secondary border border-border rounded-xl overflow-hidden"
+              >
+                <button
+                  onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                  className="w-full flex items-center justify-between p-5 text-left"
+                >
+                  <span className="font-heading font-semibold text-foreground pr-4">{faq.q}</span>
+                  <ChevronDown className={`h-5 w-5 text-primary flex-shrink-0 transition-transform duration-200 ${openFaq === i ? "rotate-180" : ""}`} />
+                </button>
+                {openFaq === i && (
+                  <div className="px-5 pb-5 text-muted-foreground leading-relaxed">
+                    {faq.a}
+                  </div>
+                )}
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="section-padding section-bg-dark">
         <div className="container mx-auto px-4">
@@ -236,6 +306,7 @@ const ElectricalPanels = () => (
       <Footer />
     </div>
   </>
-);
+  );
+};
 
 export default ElectricalPanels;
