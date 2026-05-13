@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
 import { z } from "zod";
 import { AlertTriangle, Phone, ArrowRight, ChevronDown, Send } from "lucide-react";
@@ -36,6 +37,11 @@ export interface FaqItem {
 }
 
 export interface ServicePageConfig {
+  seo: {
+    title: string;
+    description: string;
+    path: string;
+  };
   eyebrow: string;
   titleLead: string;
   titleAccent: string;
