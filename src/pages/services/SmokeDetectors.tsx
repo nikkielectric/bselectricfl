@@ -5,6 +5,11 @@ import comboImg from "@/assets/services/smoke-combo.jpg";
 import alarmImg from "@/assets/services/smoke-alarm.jpg";
 
 const config: ServicePageConfig = {
+  seo: {
+    title: "Smoke & CO Detector Installation | Broward County, FL",
+    description: "Hardwired, interconnected smoke and carbon monoxide detector installation to Florida code in Broward County. Call (954) 868-4111.",
+    path: "/services/smoke-co-detectors",
+  },
   eyebrow: "Electrical Services",
   titleLead: "Smoke & CO",
   titleAccent: "Detector Installation",

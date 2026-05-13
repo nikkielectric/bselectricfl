@@ -5,6 +5,11 @@ import afciImg from "@/assets/services/breakers-afci.jpg";
 import replaceImg from "@/assets/services/breakers-replace.jpg";
 
 const config: ServicePageConfig = {
+  seo: {
+    title: "Circuit Breaker Installation & Replacement | Broward County, FL",
+    description: "Breaker replacement, AFCI/GFCI installation, and panel breaker repair to NEC code in Broward County. Free quotes. Call (954) 868-4111.",
+    path: "/services/circuit-breakers",
+  },
   eyebrow: "Electrical Services",
   titleLead: "Circuit Breaker",
   titleAccent: "Installation & Replacement",

@@ -5,6 +5,11 @@ import plugImg from "@/assets/services/ev-plug.jpg";
 import outletImg from "@/assets/services/ev-outlet.jpg";
 
 const config: ServicePageConfig = {
+  seo: {
+    title: "EV Charger Installation in Broward County, FL | Tesla, ChargePoint",
+    description: "Level 2 EV charger installation for Tesla, ChargePoint, JuiceBox & NEMA 14-50 in Broward County. Permits handled. Call (954) 868-4111.",
+    path: "/services/ev-charger-installation",
+  },
   eyebrow: "Electrical Services",
   titleLead: "EV Charger",
   titleAccent: "Installation",

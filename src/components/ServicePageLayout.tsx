@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
 import { z } from "zod";
 import { AlertTriangle, Phone, ArrowRight, ChevronDown, Send } from "lucide-react";
@@ -36,6 +37,11 @@ export interface FaqItem {
 }
 
 export interface ServicePageConfig {
+  seo: {
+    title: string;
+    description: string;
+    path: string;
+  };
   eyebrow: string;
   titleLead: string;
   titleAccent: string;
@@ -99,6 +105,15 @@ const ServicePageLayout = ({ config }: { config: ServicePageConfig }) => {
 
   return (
     <>
+      <Helmet>
+        <title>{config.seo.title}</title>
+        <meta name="description" content={config.seo.description} />
+        <link rel="canonical" href={`https://bselectricfl.lovable.app${config.seo.path}`} />
+        <meta property="og:title" content={config.seo.title} />
+        <meta property="og:description" content={config.seo.description} />
+        <meta property="og:url" content={`https://bselectricfl.lovable.app${config.seo.path}`} />
+        <meta property="og:type" content="website" />
+      </Helmet>
       <CircuitBackground />
       <script
         type="application/ld+json"

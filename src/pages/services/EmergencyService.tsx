@@ -5,6 +5,11 @@ import burntImg from "@/assets/services/emergency-burnt.jpg";
 import vanImg from "@/assets/services/emergency-van.jpg";
 
 const config: ServicePageConfig = {
+  seo: {
+    title: "24/7 Emergency Electrician in Broward County, FL",
+    description: "24/7 emergency electrical service across Broward County. Power loss, sparking outlets, burning smells — licensed help fast. Call (954) 868-4111.",
+    path: "/services/emergency-service",
+  },
   eyebrow: "24/7 Emergency Service",
   titleLead: "Emergency",
   titleAccent: "Electrical Service",
