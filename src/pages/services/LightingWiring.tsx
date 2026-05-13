@@ -5,6 +5,11 @@ import rewireImg from "@/assets/services/lighting-rewire.jpg";
 import fixtureImg from "@/assets/services/lighting-fixture.jpg";
 
 const config: ServicePageConfig = {
+  seo: {
+    title: "Lighting Installation & Wiring | Broward County Electricians",
+    description: "Recessed LED, outdoor lighting, fixture install, and whole-home rewiring in Broward County, FL. Licensed & insured. Call (954) 868-4111.",
+    path: "/services/lighting-wiring",
+  },
   eyebrow: "Electrical Services",
   titleLead: "Lighting &",
   titleAccent: "Wiring",

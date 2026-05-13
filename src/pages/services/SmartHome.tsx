@@ -5,6 +5,11 @@ import thermostatImg from "@/assets/services/smart-thermostat.jpg";
 import panelImg from "@/assets/services/smart-panel.jpg";
 
 const config: ServicePageConfig = {
+  seo: {
+    title: "Smart Home Electrical & Automation | Broward County, FL",
+    description: "Smart switches, smart panels, thermostats, and whole-home automation wiring in Broward County. Lutron, Leviton, more. Call (954) 868-4111.",
+    path: "/services/smart-home-electrical",
+  },
   eyebrow: "Electrical Services",
   titleLead: "Smart Home",
   titleAccent: "Electrical",

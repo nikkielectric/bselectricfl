@@ -5,6 +5,11 @@ import breakerImg from "@/assets/services/repairs-breaker.jpg";
 import troubleshootImg from "@/assets/services/repairs-troubleshoot.jpg";
 
 const config: ServicePageConfig = {
+  seo: {
+    title: "Electrical Repairs in Fort Lauderdale & Broward County, FL",
+    description: "Fast electrical repair for outlets, wiring, breakers, and no-power calls in Broward County. Licensed, warrantied work. Call (954) 868-4111.",
+    path: "/services/electrical-repairs",
+  },
   eyebrow: "Electrical Services",
   titleLead: "Electrical",
   titleAccent: "Repairs",
