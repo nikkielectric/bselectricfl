@@ -21,7 +21,7 @@ const serviceLinks = [
 const Footer = () => (
   <footer className="bg-primary border-t border-primary-foreground/20">
     <div className="container mx-auto px-4 py-12 md:py-16">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1.4fr_1.6fr_1fr] gap-8 lg:gap-12">
         <div>
           <div className="flex items-center gap-2 mb-4">
             <Zap className="h-6 w-6 text-primary-foreground" />
