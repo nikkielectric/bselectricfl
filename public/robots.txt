@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://bselectricfl.com/sitemap.xml
+Sitemap: https://bselectricfl.lovable.app/sitemap.xml

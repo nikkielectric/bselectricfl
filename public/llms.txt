@@ -1,0 +1,21 @@
+# B&S Electric LLC
+
+> Licensed Florida electrical contractor (EC13015340) serving Broward County with residential, commercial, and industrial electrical services. 24/7 emergency response, free estimates on quoted projects.
+
+## Pages
+
+- [Home](/): Overview of services, pricing, service area, and contact.
+- [Electrical Panels](/services/electrical-panels): Panel upgrades, replacements, repairs, and sub-panel installation.
+- [Electrical Repairs](/services/electrical-repairs): Troubleshooting outlets, wiring faults, breakers, and no-power calls.
+- [Emergency Service](/services/emergency-service): 24/7 emergency electrician for power loss, sparking outlets, and hazards.
+- [Circuit Breakers](/services/circuit-breakers): Breaker replacement, AFCI/GFCI installation, and panel breaker repair.
+- [Lighting & Wiring](/services/lighting-wiring): Indoor/outdoor lighting installation, rewiring, and new circuits.
+- [Smoke & CO Detectors](/services/smoke-co-detectors): Hardwired smoke and carbon monoxide detector installation.
+- [EV Charger Installation](/services/ev-charger-installation): Level 2 EV charger install for Tesla, Ford, Rivian, and others.
+- [Smart Home Electrical](/services/smart-home-electrical): Smart switches, lighting, outlets, and home automation wiring.
+
+## Contact
+
+- Phone: (954) 868-4111
+- Email: Services@bselectricfl.com
+- Address: 15800 Pines Blvd Suite 3120, Hollywood, FL 33027
