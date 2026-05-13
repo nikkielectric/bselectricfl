@@ -105,6 +105,15 @@ const ServicePageLayout = ({ config }: { config: ServicePageConfig }) => {
 
   return (
     <>
+      <Helmet>
+        <title>{config.seo.title}</title>
+        <meta name="description" content={config.seo.description} />
+        <link rel="canonical" href={`https://bselectricfl.lovable.app${config.seo.path}`} />
+        <meta property="og:title" content={config.seo.title} />
+        <meta property="og:description" content={config.seo.description} />
+        <meta property="og:url" content={`https://bselectricfl.lovable.app${config.seo.path}`} />
+        <meta property="og:type" content="website" />
+      </Helmet>
       <CircuitBackground />
       <script
         type="application/ld+json"
