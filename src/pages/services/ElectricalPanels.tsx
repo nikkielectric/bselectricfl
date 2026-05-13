@@ -5,6 +5,11 @@ import panelRepairsImg from "@/assets/services/panel-repairs.jpg";
 import subPanelImg from "@/assets/services/sub-panel.jpg";
 
 const config: ServicePageConfig = {
+  seo: {
+    title: "Electrical Panel Upgrades & Repairs in Broward County, FL",
+    description: "Licensed Broward County electricians for panel upgrades, replacements, and sub-panels. Code-compliant work, free quotes. Call (954) 868-4111.",
+    path: "/services/electrical-panels",
+  },
   eyebrow: "Electrical Services",
   titleLead: "Electrical Panel",
   titleAccent: "Upgrades & Repairs",
