@@ -1,10 +1,11 @@
 import { Zap, Phone, Mail, MapPin } from "lucide-react";
 
 const quickLinks = [
-  { label: "Pricing", href: "#pricing" },
-  { label: "Why Us", href: "#why-us" },
-  { label: "Service Area", href: "#service-area" },
-  { label: "Contact", href: "#contact" },
+  { label: "About Us", href: "/about" },
+  { label: "Pricing", href: "/#pricing" },
+  { label: "Why Us", href: "/#why-us" },
+  { label: "Service Area", href: "/#service-area" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 const serviceLinks = [
