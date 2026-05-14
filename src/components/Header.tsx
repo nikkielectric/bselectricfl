@@ -79,7 +79,7 @@ const Header = () => {
               </div>
             </div>
 
-            <a href="#" className={linkClass}>About Us</a>
+            <a href="/about" className={linkClass}>About Us</a>
 
             
 
