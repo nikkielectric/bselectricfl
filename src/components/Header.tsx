@@ -141,7 +141,7 @@ const Header = () => {
                 </div>
               )}
 
-              <a href="#" onClick={() => setMobileOpen(false)} className={`${linkClass} py-2`}>About Us</a>
+              <a href="/about" onClick={() => setMobileOpen(false)} className={`${linkClass} py-2`}>About Us</a>
 
               
 
